@@ -45,42 +45,70 @@ Le projet a été conçu en respectant les principes d'architecture logicielle m
 ## 🚀 Installation et Lancement
 
 ### Prérequis
-*   Java JDK 17+
-*   Node.js 18+
-*   MySQL Server
+*   **Java JDK 17+**
+*   **Node.js 18+**
+*   **MySQL Server 8+**
+*   **Git**
 
-### 1. Configuration Base de Données
-Créez une base de données vide nommée `ebank_db`.
+### 1. Cloner le Projet
+```bash
+git clone https://github.com/youssef-abd/Ebank.git
+cd Ebank
+```
+
+### 2. Configuration de la Base de Données MySQL
+Créez une base de données vide nommée `ebank_db` :
 ```sql
 CREATE DATABASE ebank_db;
 ```
 
-### 2. Configuration Backend
-Ouvrez `ebank-backend/src/main/resources/application.properties` et configurez vos accès MySQL et Email :
-```properties
-spring.datasource.username=root
-spring.datasource.password=VOTRE_MOT_DE_PASSE
+### 3. Configuration des Variables d'Environnement (Backend)
 
-# Config Email (Optionnel pour test, Recommandé pour prod)
-spring.mail.username=votre.email@gmail.com
-spring.mail.password=votre_app_password
+⚠️ **IMPORTANT** : Le projet utilise des variables d'environnement pour protéger les informations sensibles.
+
+#### Étape 3.1 : Créer le fichier `.env`
+Naviguez vers le dossier backend et créez un fichier `.env` à partir du template :
+```bash
+cd ebank-backend
+cp .env.example .env
 ```
 
-### 3. Lancement
-**Backend :**
+#### Étape 3.2 : Remplir le fichier `.env`
+Ouvrez le fichier `.env` et remplissez-le avec **VOS** informations :
+
+```properties
+# Configuration MySQL
+DB_USERNAME=root
+DB_PASSWORD=votre_mot_de_passe_mysql
+
+# Configuration SMTP (Optionnel pour les tests)
+MAIL_USERNAME=votre.email@gmail.com
+MAIL_PASSWORD=votre_mot_de_passe_application_gmail
+
+# Configuration JWT (Générez une clé aléatoire de 64 caractères minimum)
+JWT_SECRET=404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+```
+
+**Notes :**
+*   Pour `MAIL_PASSWORD`, vous devez générer un **"Mot de passe d'application"** depuis votre compte Google (Sécurité → Validation en deux étapes → Mots de passe des applications).
+*   Si vous ne configurez pas SMTP, les identifiants des nouveaux clients seront affichés dans la console du backend.
+*   Pour `JWT_SECRET`, vous pouvez garder la valeur par défaut ou générer une nouvelle clé aléatoire.
+
+### 4. Lancement du Backend
 ```bash
 cd ebank-backend
 mvn spring-boot:run
 ```
-*Le backend démarrera sur le port 8080.*
+*Le backend démarrera sur le port **8080**.*
 
-**Frontend :**
+### 5. Lancement du Frontend
+Ouvrez un **nouveau terminal** :
 ```bash
 cd ebank-frontend
 npm install
 npm run dev
 ```
-*Le frontend sera accessible sur http://localhost:5173.*
+*Le frontend sera accessible sur **http://localhost:5173**.*
 
 ---
 
@@ -90,3 +118,33 @@ Au lancement, l'application crée automatiquement un Agent par défaut :
 *   **Password :** `admin`
 
 Connectez-vous avec cet agent pour créer vos premiers clients !
+
+---
+
+## 📚 Documentation Complémentaire
+*   **Guide de Présentation** : Consultez `PRESENTATION_ARCHI.md` pour préparer une soutenance.
+*   **Documentation Technique Avancée** : Voir `DOCUMENTATION_TECHNIQUE_AVANCEE.md` pour une analyse approfondie du code.
+
+---
+
+## 🧪 Lancer les Tests Unitaires
+```bash
+cd ebank-backend
+mvn test
+```
+
+---
+
+## 🤝 Contribution
+Ce projet est un projet académique. Les contributions sont les bienvenues pour l'améliorer !
+
+---
+
+## 📄 Licence
+Ce projet est sous licence MIT.
+
+---
+
+## 👨‍💻 Auteur
+**Youssef Abdellaoui**  
+Projet réalisé dans le cadre de la formation en Architecture J2EE / React.
