@@ -1,0 +1,217 @@
+.dashboard-container {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+    color: var(--gray-800);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--space-8);
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: var(--space-8);
+    align-items: start;
+}
+
+/* ===== BALANCE CARD (SOLDE) - BLACK ON WHITE THEME ===== */
+.balance-card {
+    background: white;
+    color: var(--gray-900) !important;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    height: auto;
+}
+
+.balance-card h3 {
+    opacity: 1;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-2);
+    color: var(--gray-500);
+}
+
+.balance-amount {
+    font-size: 2.5rem;
+    /* Taille réduite */
+    font-weight: 800;
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--primary-600);
+    /* Bleu pour faire ressortir le montant */
+}
+
+.balance-rib {
+    font-family: 'Consolas', 'Monaco', monospace;
+    background: var(--gray-50);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    font-size: 0.85rem;
+    border: 1px solid var(--gray-200);
+    color: var(--gray-700);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.balance-date {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    font-style: italic;
+}
+
+/* ===== OPERATIONS CARD ===== */
+.operations-card {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+}
+
+.operations-card h3 {
+    font-size: 1.25rem;
+    color: var(--gray-900);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--gray-100);
+}
+
+.operations-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.operations-table th {
+    text-align: left;
+    padding: var(--space-4);
+    color: var(--gray-500);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--gray-50);
+}
+
+.operations-table th:first-child {
+    border-top-left-radius: var(--radius-lg);
+}
+
+.operations-table th:last-child {
+    border-top-right-radius: var(--radius-lg);
+}
+
+.operations-table td {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--gray-100);
+    vertical-align: middle;
+    color: var(--gray-700);
+    font-size: 0.95rem;
+}
+
+.operations-table tr:last-child td {
+    border-bottom: none;
+}
+
+.operations-table tr:hover td {
+    background-color: var(--gray-50);
+}
+
+.op-title {
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 2px;
+}
+
+.op-motif {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+}
+
+/* Badges */
+.badge-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.badge-warning {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Montants */
+.text-right {
+    text-align: right;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-success {
+    color: #059669;
+}
+
+.text-danger {
+    color: #dc2626;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .operations-table th {
+        display: none;
+    }
+
+    .operations-table td {
+        display: block;
+        text-align: right;
+    }
+
+    .operations-table td:first-child {
+        text-align: left;
+        background: var(--gray-50);
+        font-weight: 600;
+    }
+
+    .operations-table td:nth-child(2) {
+        text-align: left;
+    }
+}
