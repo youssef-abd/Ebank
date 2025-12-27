@@ -121,12 +121,6 @@ Connectez-vous avec cet agent pour créer vos premiers clients !
 
 ---
 
-## 📚 Documentation Complémentaire
-*   **Guide de Présentation** : Consultez `PRESENTATION_ARCHI.md` pour préparer une soutenance.
-*   **Documentation Technique Avancée** : Voir `DOCUMENTATION_TECHNIQUE_AVANCEE.md` pour une analyse approfondie du code.
-
----
-
 ## 🧪 Lancer les Tests Unitaires
 ```bash
 cd ebank-backend
@@ -144,7 +138,3 @@ Ce projet est un projet académique. Les contributions sont les bienvenues pour 
 Ce projet est sous licence MIT.
 
 ---
-
-## 👨‍💻 Auteur
-**Youssef Abdellaoui**  
-Projet réalisé dans le cadre de la formation en Architecture J2EE / React.
